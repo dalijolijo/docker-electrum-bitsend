@@ -1,0 +1,23 @@
+version: "2"
+services:
+
+  bitsendd:
+    image: dalijolijo/bitsendd
+    expose:
+      - "5888"
+    ports:
+      - "5889:5889"
+    volumes:
+      - ./data/bitsendd:/data
+    command: -rpcuser=electrum -rpcpassword=electrum
+
+  electrumx:
+    image: lukechilds/electrumx
+    ports:
+      - "55002:50002"
+    volumes:
+      - ./data/electrumx:/data
+    environment:
+      - DAEMON_URL=http://electrum:electrum@bitsendd:5888
+      - COIN=Bitsend
+      - DONATION_ADDRESS=Vh7P3xQZzQFqsrmQtZr9nZr12rySjos2Sv
