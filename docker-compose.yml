@@ -12,7 +12,7 @@ services:
     command: -rpcuser=electrum -rpcpassword=electrum
 
   electrumx:
-    image: lukechilds/electrumx
+    image: dalijolijo/electrumx
     ports:
       - "55002:50002"
     volumes:
