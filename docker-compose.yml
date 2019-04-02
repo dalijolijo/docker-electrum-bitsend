@@ -4,9 +4,9 @@ services:
   bitsendd:
     image: dalijolijo/bitsendd
     expose:
-      - "5888"
+      - "8800"
     ports:
-      - "5889:5889"
+      - "8886:8886"
     volumes:
       - ./data/bitsendd:/data
     command: -rpcuser=electrum -rpcpassword=electrum
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./data/electrumx:/data
     environment:
-      - DAEMON_URL=http://electrum:electrum@bitsendd:5888
+      - DAEMON_URL=http://electrum:electrum@bitsendd:8800
       - COIN=Bitsend
       - RPC_HOST=127.0.0.1
       - MAX_SESSIONS=100000 
