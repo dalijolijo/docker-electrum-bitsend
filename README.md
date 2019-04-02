@@ -8,7 +8,7 @@ A Docker configuration with sane defaults for running a full Bitsend node behind
 ## Usage
 
 ```
-docker-compose up
+screen docker-compose up
 ```
 
 This will pull the latest version of bitsendd and ElectrumX, start syncing the blockchain, generate an SSL certificate and start listening for secure Electrum traffic on port 55002.
