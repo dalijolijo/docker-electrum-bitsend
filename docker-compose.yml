@@ -14,10 +14,11 @@ services:
   electrumx:
     image: dalijolijo/electrumx
     ports:
-      - "55002:50002"
+      - "50002:50002"
     volumes:
       - ./data/electrumx:/data
     environment:
       - DAEMON_URL=http://electrum:electrum@bitsendd:5888
       - COIN=Bitsend
-      - DONATION_ADDRESS=Vh7P3xQZzQFqsrmQtZr9nZr12rySjos2Sv
+      - RPC_HOST=127.0.0.1
+      - MAX_SESSIONS=100000 
